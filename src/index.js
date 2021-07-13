@@ -7,9 +7,31 @@
 // - if the user is between 18 and 65, they pay full price.
 
 const pricePerKm = 0.21;
+let distance;
 
 const age = prompt("Enter your age: ");
-const distance = prompt("How far are you traveling?");
+
+const journey = prompt(
+  `
+      What journey are you planning?
+      
+      1- Brixton to High Barnet (20km)
+      2- London Bridge to Luton (100km)
+      3- Stratford to Southend on Sea (50km)
+  
+      Please type in number for your journey.
+      `
+);
+
+if (parseInt(journey) === 1) {
+  distance = 20;
+} else if (parseInt(journey) === 2) {
+  distance = 100;
+} else if (parseInt(journey) === 3) {
+  distance = 50;
+} else {
+  alert(`There is no other option than choosing from previous three...`);
+}
 
 const pricePerDistance = pricePerKm * distance;
 
